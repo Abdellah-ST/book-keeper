@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+  --primary-color:#9e44c5;
+  --border-radius:7px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+background-color: var(--primary-color);
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath fill='%2351dd86' fill-opacity='0.21' d='M0 17.83V0h17.83a3 3 0 0 1-5.66 2H5.9A5 5 0 0 1 2 5.9v6.27a3 3 0 0 1-2 5.66zm0 18.34a3 3 0 0 1 2 2.76v6.27A5 5 0 0 1 5.9 52h6.27a3 3 0 0 1 5.66 0H0V36.17zM36.17 52a3 3 0 0 1 5.66 0h6.27a5 5 0 0 1 3.9-3.9v-6.27a3 3 0 0 1 0-5.66V52H36.17zM0 31.93v-9.78a5 5 0 0 1 3.8.72l4.43-4.43a3 3 0 1 1 1.42 1.41L5.2 24.28a5 5 0 0 1 0 5.52l4.44 4.43a3 3 0 1 1-1.42 1.42L3.8 31.2a5 5 0 0 1-3.8.72zm52-14.1a3 3 0 0 1 0-5.66V5.9A5 5 0 0 1 48.1 2h-6.27a3 3 0 0 1-5.66-2H52v17.83zm0 14.1a4.97 4.97 0 0 1-1.72-.72l-4.43 4.44a3 3 0 1 1-1.41-1.42l4.43-4.43a5 5 0 0 1 0-5.52l-4.43-4.43a3 3 0 1 1 1.41-1.41l4.43 4.43c.53-.35 1.12-.6 1.72-.72v9.78zM22.15 0h9.78a5 5 0 0 1-.72 3.8l4.44 4.43a3 3 0 1 1-1.42 1.42L29.8 5.2a5 5 0 0 1-5.52 0l-4.43 4.44a3 3 0 1 1-1.41-1.42l4.43-4.43a5 5 0 0 1-.72-3.8zm0 52c.13-.6.37-1.19.72-1.72l-4.43-4.43a3 3 0 1 1 1.41-1.41l4.43 4.43a5 5 0 0 1 5.52 0l4.43-4.43a3 3 0 1 1 1.42 1.41l-4.44 4.43c.36.53.6 1.12.72 1.72h-9.78zm9.75-24a5 5 0 0 1-3.9 3.9v6.27a3 3 0 1 1-2 0V31.9a5 5 0 0 1-3.9-3.9h-6.27a3 3 0 1 1 0-2h6.27a5 5 0 0 1 3.9-3.9v-6.27a3 3 0 1 1 2 0v6.27a5 5 0 0 1 3.9 3.9h6.27a3 3 0 1 1 0 2H31.9z'%3E%3C/path%3E%3C/svg%3E");
+  margin: 0;
+  min-height: 100vh;
+  font-family: Roboto, sans-serif;;
+}
+h1{
+
+  color: #fff;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 275px;
+  margin: 20px auto 10px;
+  user-select: none;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+h1:hover{
+  background: rgba(0, 0, 0, .8);
+}
+/* bookmarks */
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.item{
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin:20px;
+}
+.item:hover{
+  /* filter: brightness(0.8); */
+  background: rgba(0, 0, 0, 0.5);
+}
+a{
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+a:link,
+a:visited{
+  color: white;
+  text-decoration: none;
+}
+a:hover,
+a:active{
+  text-decoration: underline;
+}
+.name img{
+  height: 20px;
+  width: 20px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+.fa-times{
+  float: right;
+  z-index: 2;
+  cursor: pointer;
+}
+.name{
+  margin-top: 20px;
+  margin-right: 20px;
+}
+/* modal container */
+.modal-container{
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.show-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.modal{
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation:  modalopen 2s;
+}
+@keyframes modalopen {
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+.close-icon{
+  float: right;
+  color: white;
+  font-size: 24px;
+  position: relative;
+  top: 13px;
+  right: 13px;
+  cursor: pointer;
+}
+.modal-header{
+  background: var(--primary-color);
+  color: white;
+  padding: 15px;
+}
+h3{
+  margin: 0;
+}
+.modal-content{
+  padding: 20px;
+  background: whitesmoke;
+}
+
+/* form */
+.form-group{
+  height: 55px;
+}
+.form-input{
+  width: 97%;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  display: block;
+  outline: none;
+}
+form-label{
+  color: var(--primary-color);
+  display: block;
+}
+  button{
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+button:hover{
+  filter: brightness(110%);
+}
+button:focus{
+  outline: none;
+}
+@media screen and (max-width:1000px) {
+  .container{
+    flex-direction: column;
+  }
+}
